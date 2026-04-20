@@ -299,7 +299,7 @@ export function getCrossChainTransactionSuccessToast(txLink: string): Omit<Toast
             link: (text: string) => <Link to={locations.activity()}>{text}</Link>
           })}
         </p>
-        <Button as="a" href={locations.activity()} target="_blank">
+        <Button as={Link} to={locations.activity()}>
           {t('navigation.activity')}
           <Icon style={{ marginLeft: 6 }} name="clock outline" />
         </Button>
@@ -326,8 +326,8 @@ export function getBidPlacedSuccessToast(asset: Asset): Omit<Toast, 'id'> {
           })}
         </span>
         <Button
-          as="a"
-          href={locations.currentAccount({ section: Section.BIDS, vendor: VendorName.DECENTRALAND })}
+          as={Link}
+          to={locations.currentAccount({ section: Section.BIDS, vendor: VendorName.DECENTRALAND })}
           style={{ width: 'fit-content', padding: 0, marginTop: '10px' }}
           basic
           target="_blank"
@@ -360,8 +360,8 @@ export function getCreateOrderSuccessToast(nft: NFT): Omit<Toast, 'id'> {
           })}
         </span>
         <Button
-          as="a"
-          href={locations.currentAccount({ section: Section.ON_SALE, vendor: VendorName.DECENTRALAND })}
+          as={Link}
+          to={locations.currentAccount({ section: Section.ON_SALE, vendor: VendorName.DECENTRALAND })}
           style={{ width: 'fit-content', padding: 0, marginTop: '10px' }}
           basic
           target="_blank"
